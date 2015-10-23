@@ -17,7 +17,7 @@ def tryfloat(x):
 def getpars(x):
     '''Get necessary paramters.'''
     try:
-        res = [str(x.mean(skipna=True)), str(x.max(skipna=True)), str(x.min(skipna=True))]
+        res = [str(x.median(skipna=True)), str(x.max(skipna=True)), str(x.min(skipna=True))]
     except:
         res = ['', '', '']
     return res
