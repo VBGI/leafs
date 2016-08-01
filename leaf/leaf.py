@@ -809,6 +809,9 @@ from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 from procrupy import generalized_procrustes_analysis
+from sklearn.feature_selection import RFE
+from sklearn.svm import SVR
+
 
 
 print 'Total len', len(gdata)
@@ -843,7 +846,12 @@ plt.plot(res[:,0], res[:,1], 'r')
 plt.plot(res1[:,0], res1[:,1], 'g')
 plt.plot(res2[:,0], res2[:,1], 'b')
 plt.plot(res3[:,0], res3[:,1], 'c')
+
+print np.argsort(np.var(data, axis=0))
+print_angle_combs()
 plt.show()
+
+
 
 
 #print_angle_combs()
