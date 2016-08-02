@@ -11,8 +11,9 @@ This is main heading. Common description will be here.
 We used PCA as a main dimensionality reduction technique. Initially, leaf shape was characterized by angles of all possible   
 triangles formed on a set of landmark points. The set of landmark points was chosen as follows:
    
-![Choosing landmark points](https://raw.githubusercontent.com/scidam/leafs/master/leaf/imgs/landmarks.png)
-
+<p align="center">
+<img src="https://raw.githubusercontent.com/scidam/leafs/master/leaf/imgs/landmarks.png">
+</p>
 
 It was 168 different angles, so we had unsupervised classification problem in a quite high dimensional space. 
 
