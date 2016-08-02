@@ -16,7 +16,7 @@ triangles formed from a set of landmark points. The set of landmark points was c
 </p>
 
 It was 168 different angles, so we had unsupervised classification problem in a quite high dimensional space. 
-To reduce dimension of factor space we investigated principal components. 
+To reduce dimensionality of the factor space we investigated principal components of the data. 
 
 We obtained the following PCA-weights (explained variance ratios): 
 
