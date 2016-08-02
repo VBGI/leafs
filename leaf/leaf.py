@@ -832,6 +832,10 @@ ccd = np.array(ccd)
 
 pca = PCA(n_components=50)
 datat = pca.fit_transform(data)
+print 'PCA: ', pca.explained_variance_ratio_, sum(pca.explained_variance_ratio_)
+sdfwfewfjksl
+
+
 
 y_pred = KMeans(n_clusters=4, max_iter=100000).fit_predict(datat)
 plt.scatter(datat[:, 0], datat[:, 1], c=y_pred, cmap='RdYlBu')
