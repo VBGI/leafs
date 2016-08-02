@@ -10,7 +10,6 @@ Description of methods used for dimensionality reduction.
 Description of clustering methods.
 
 ![K-means with k = 4](/imgs/kmeans4.png)
-Format: ![Results of k-means clustring](url)
 
 
   
