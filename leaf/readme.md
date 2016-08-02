@@ -16,6 +16,7 @@ triangles formed from a set of landmark points. The set of landmark points was c
 </p>
 
 It was 168 different angles, so we had unsupervised classification problem in a quite high dimensional space. 
+To reduce dimension of factor space we investigated principal components. 
 
 We obtained the following PCA-weights (explained variance ratios): 
 
@@ -29,11 +30,12 @@ We obtained the following PCA-weights (explained variance ratios):
 >  0.0047192   0.00468047  0.00461325  0.00458282  0.00453561  0.00441768
 >  0.00386305  0.00381909]
  
-From these values one can see that first 27 values are quite bigger than last. So, we can use first 27 principal components
-to describe leaf  shape morphology. These 27 principal components explain about 63.5% of total variance. 
-Increasing the number of components to 50, allow us to increase this value to 75%.
+From these values one can see that first 27 values are quite bigger than last ones. So, we can use first 27 principal components only
+to describe leaf  shape morphology. These 27 principal components explain about 63.5% of total variance
+Increasing the number of components to 50 allow us to increase this value to 75%.
 Currently, we decided to stop dimensionality reduction at 50 principal components.
 
+To classify all the data, we used K-means algorithm with predefined number of species (k = 4). 
 
 ![K-means with k = 4](https://raw.githubusercontent.com/scidam/leafs/master/leaf/imgs/kmeans4.png)
 
@@ -51,4 +53,4 @@ Currently, we decided to stop dimensionality reduction at 50 principal component
 
 
 ##Conclusion 
-Common conclusion on the causes of the variability.
+Common conclusions on the causes of the variations in leaf shape.
