@@ -820,12 +820,13 @@ count = 0
 data = []
 ccd = []
 contours = []
-for item,cd in zip(gdata, coords):
+for item,cd, fname in zip(gdata, coords, fnames):
     for leaf in item:
         count += 1
         data.append(get_contour_angles(leaf))
         ccd.append([cd[0], cd[1]])
         contours.append(leaf.ppts)
+        print fname, ccd[-1]
 contours = np.array(contours)        
 ccd = np.array(ccd)
 
@@ -833,14 +834,14 @@ pca = PCA(n_components=50)
 datat = pca.fit_transform(data)
 
 y_pred = KMeans(n_clusters=4, max_iter=100000).fit_predict(datat)
-plt.scatter(datat[:, 0], datat[:, 1], c=y_pred)
+plt.scatter(datat[:, 0], datat[:, 1], c=y_pred, cmap='RdYlBu')
 plt.figure()
-plt.scatter(ccd[:, 1], ccd[:, 0], c=y_pred, s=100)
+plt.scatter(ccd[:, 1], ccd[:, 0], c=y_pred, s=100, cmap='RdYlBu')
 
-res=generalized_procrustes_analysis(contours[y_pred==0])
-res1=generalized_procrustes_analysis(contours[y_pred==1])
-res2=generalized_procrustes_analysis(contours[y_pred==2])
-res3=generalized_procrustes_analysis(contours[y_pred==3])
+res = generalized_procrustes_analysis(contours[y_pred==0])
+res1 = generalized_procrustes_analysis(contours[y_pred==1])
+res2 = generalized_procrustes_analysis(contours[y_pred==2])
+res3 = generalized_procrustes_analysis(contours[y_pred==3])
 plt.figure()
 plt.plot(res[:,0], res[:,1], 'r')
 plt.plot(res1[:,0], res1[:,1], 'g')
