@@ -832,6 +832,7 @@ ccd = np.array(ccd)
 
 pca = PCA(n_components=50)
 datat = pca.fit_transform(data)
+
 print 'PCA: ', pca.explained_variance_ratio_, sum(pca.explained_variance_ratio_)
 sdfwfewfjksl
 
